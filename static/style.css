@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+  }
+  
+  .full-height {
+    height: 100%;
+  }
+.button5{
+    float: right;
+    border-radius: 50%;
+    width: 80px;
+    height:80px ;
+    background-color: lightgray;
+}
+.button5:hover{
+    background-color: lightblue;
+}
+.hide{
+    display: none;
+}

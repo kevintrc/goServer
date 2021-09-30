@@ -1,0 +1,18 @@
+{
+    "First Parameter":{
+        "Level" : "C",
+        "Rank" : 30
+    },
+    "Second Parameter":{
+        "Level" : "A",
+        "Rank" : 10
+    },
+    "Third Parameter":{
+        "Level" : "A",
+        "Rank" : 20
+    },
+    "Fourth Parameter":{
+        "Level" : "B",
+        "Rank" : 15
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/assets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid" style="width: 90%;margin-top: 30px;">
+        {{if.}}
+            <button type="button" class="button button5" onClick="goEdit()">EDIT</button>
+        {{end}}
+            <div class="row">
+            <div class="col-md-12">
+                <center>
+                <h3 style="margin-bottom: 10px;">
+                    Server Config Admin
+                </h3>
+        
+                <div class="dropdown">
+
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown">
+                            Select Server
+                        </button>
+ 
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item disabled" href="#">-- Select Server --</a>
+                        <a class="dropdown-item" href="/servers?server=first">First</a>
+                        <a class="dropdown-item" href="/servers?server=second">Second</a>
+                    </div>
+                </div>
+            </center>
+            </div>
+        </div>
+        {{if.}}
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6" style="margin-top:20px;">
+                <div class="card">
+                    <h5 class="card-header">
+                        {{if .}}
+                        <b>SERVER</b> : {{.SERVER}}
+                    </h5>
+                    <div class="card-body" style="background-color: white;">
+                        <p class="card-text" >
+                        <ul>
+                            <li><b>SERVERDISPLAYNAME</b> : {{.SERVERDISPLAYNAME}}</li><br>
+                            <li><b>SERVERPORT</b> : {{.SERVERPORT}}</li><br>
+
+                            {{if.FirstParameter}}
+                            <li><b>FirstParameter</b></li><br>
+                            <ul>
+                                <li><b>Level</b> : {{.FirstParameter.Level}}</li>
+                                <li><b>Rank</b> : {{.FirstParameter.Rank}}</li><br>
+                            </ul>
+                            <li><b>SecondParameter</b></li><br>
+                            <ul>
+                                <li><b>Level</b> : {{.SecondParameter.Level}}</li>
+                                <li><b>Rank</b> : {{.SecondParameter.Rank}}</li><br>
+                            </ul>
+                            {{end}}
+
+                            {{if.ThirdParameter}}
+                            <li><b>ThirdParameter</b></li><br>
+                            <ul>
+                                <li><b>Level</b> : {{.ThirdParameter.Level}}</li>
+                                <li><b>Rank</b> : {{.ThirdParameter.Rank}}</li><br>
+                            </ul>
+                            <li><b>FourthParameter</b></li><br>
+                            <ul>
+                                <li><b>Level</b> : {{.FourthParameter.Level}}</li>
+                                <li><b>Rank</b> : {{.FourthParameter.Rank}}</li><br>
+                            </ul>
+                            {{end}}
+                            </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 20px;">
+                <div class="card">
+                    <h5 class="card-header">
+                        <b>SERVERPARAMS</b> :
+                    </h5>
+                    <div class="card-body" style="background-color: white;">
+                        <p class="card-text">
+
+                        <ul>
+                            {{range .SERVERPARAMS}}
+                            <li><b>PARAMETERNAME </b>: {{.PARAMETERNAME}}</li><br>
+                            <li><b>ISDEFAULT</b> : {{.ISDEFAULT}}</li><br>
+                            <li><b>PARAMETERTYPE</b> : {{.PARAMETERTYPE}}</li><br>
+                            <li><b>PARAMETERVALUE</b> : {{.PARAMETERVALUE}}</li><br><br>
+                            {{end}}
+                        </ul>
+
+                        {{end}}
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}
+{{template "footer"}}
+
+
+
+
+
+    <script src="/assets/driver.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

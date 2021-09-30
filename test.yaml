@@ -1,0 +1,24 @@
+- SERVER: First
+  SERVER_DISPLAY_NAME: First Server
+  SERVER_PORT: "9595"
+  SERVER_PARAMS:
+  - PARAMETER_NAME: First Parameter
+    IS_DEFAULT: true
+    PARAMETER_TYPE: ARG
+    PARAMETER_VALUE: "6161"
+  - PARAMETER_NAME: Second Parameter
+    IS_DEFAULT: false
+    PARAMETER_TYPE: KEY
+    PARAMETER_VALUE: KeyParameter
+- SERVER: Second
+  SERVER_DISPLAY_NAME: Second Server
+  SERVER_PORT: "6060"
+  SERVER_PARAMS:
+  - PARAMETER_NAME: Third Parameter
+    IS_DEFAULT: false
+    PARAMETER_TYPE: FLAG
+    PARAMETER_VALUE: Flagcheck
+  - PARAMETER_NAME: Fourth Parameter
+    IS_DEFAULT: true
+    PARAMETER_TYPE: Key
+    PARAMETER_VALUE: KeyParameter

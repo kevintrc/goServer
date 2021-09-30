@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/assets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <center>
+        <h1 style="margin-bottom: 10px;">SERVER : {{.SERVER}}</h1>
+    </center>
+
+    <form name="editForm" method="POST" action="/save">
+        <div class="container-fluid" style="width: 90%;margin-top: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="SERVER_DISPLAY_NAME" class="col-sm-2 col-form-label">SERVER DISPLAY
+                                    NAME</label>
+                                <div class="col-sm-10">
+                                    <input type="SERVER_DISPLAY_NAME" class="form-control" name="SERVER_DISPLAY_NAME"
+                                        value="{{.SERVERDISPLAYNAME}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="SERVER_PORT" class="col-sm-2 col-form-label">SERVER PORT</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="SERVER_PORT" value="{{.SERVERPORT}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="display: flexbox;">
+                            <br><br>
+                            <button type="submit" style="width: 100%;">SAVE</button>
+                            <br><br>
+                            <button type="button" style="width: 100%;" onClick="window.history.go(-1);">BACK</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{range.SERVERPARAMS}}
+                        <div class="col-md-6">
+                            <div class="card bg-light mb-3" style="max-width: 100%;">
+                                <div class="card-header">PARAMETER NAME : {{.PARAMETERNAME}}</div>
+                                <input type="text" class="hide" name="PARAMETERNAME" value="{{.PARAMETERNAME}}">
+                                <div class="card-body">
+                                    <input type="text" class="form-control" name="ISDEFAULT" value="{{.ISDEFAULT}}">
+                                    <input type="text" class="form-control" name="PARAMETERTYPE"
+                                        value="{{.PARAMETERTYPE}}">
+                                    <input type="text" class="form-control" name="PARAMETERVALUE"
+                                        value="{{.PARAMETERVALUE}}">
+
+                                </div>
+                            </div>
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" class="hide" name="SERVER" value="{{.SERVER}}">
+    </form>
+
+    {{template "footer"}}
+
+    <script src="/assets/driver.js"></script>
+</body>
+
+</html>

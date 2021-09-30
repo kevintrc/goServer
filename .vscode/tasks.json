@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "pkg/mod/golang.org/x/tools@v0.0.0-20180824175216-6c1c5e93cdc1/cmd/heapview/client/tsconfig.json",
+			"problemMatcher": [
+				"go run server.go"
+			],
+			"group": "build",
+			"label": "tasc: build - pkg/mod/golang.org/x/tools@v0.0.0-20180824175216-6c1c5e93cdc1/cmd/heapview/client/tsconfig.json"
+		}
+	]
+}
